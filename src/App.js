@@ -87,8 +87,11 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isChatOpen, setIsChatOpen] = useState(false);
+  const [showRibbon, setShowRibbon] = useState(() => {
+    return localStorage.getItem('hideTopRibbon') === 'true' ? false : true;
+  });
 
-  const menuItems = ['Home', 'Projects', 'Pricing', 'Internship', 'Team', 'Contact', 'About', 'Terms'];
+  const menuItems = ['Home', 'Projects', 'Internship', 'Team', 'Contact', 'About', 'Terms'];
 
   const handleLoadComplete = () => {
     setIsLoading(false);
@@ -155,7 +158,25 @@ function App() {
   }, [activePage]);
 
   const renderNavigation = () => (
-    <nav className="navbar">
+    <>
+      {showRibbon && (
+        <div className="top-ribbon" role="note" aria-label="Pricing notice">
+          <div className="top-ribbon-container">
+            <span className="top-ribbon-text">Pricing will be charged based on client requirements</span>
+            <button
+              className="top-ribbon-close"
+              aria-label="Close notice"
+              onClick={() => {
+                setShowRibbon(false);
+                try { localStorage.setItem('hideTopRibbon', 'true'); } catch (_) {}
+              }}
+            >
+              ×
+            </button>
+          </div>
+        </div>
+      )}
+      <nav className={`navbar ${!showRibbon ? 'navbar-no-ribbon' : ''}`}>
       <div className="nav-container">
         <div className="nav-logo" onClick={() => handleNavClick('Home')}>
           <LazyImage src={skywebLogo} alt="SkyWeb Logo" className="nav-logo-img" />
@@ -198,6 +219,7 @@ function App() {
         </div>
       )}
     </nav>
+    </>
   );
 
   // Scroll animation effect
@@ -454,6 +476,17 @@ function App() {
 
   return (
     <div className="app">
+      {/* Background Lottie (Home page) */}
+      <Suspense fallback={null}>
+        <div className="bg-lottie" aria-hidden="true">
+          <DotLottieReact
+            src="https://lottie.host/13185a8e-824c-4ca9-8d1b-be4bc26d8e62/AD0aXD8Kdx.lottie"
+            loop
+            autoplay
+            className="bg-lottie-canvas"
+          />
+        </div>
+      </Suspense>
       {/* Scroll-triggered Lottie Animation */}
       <Suspense fallback={null}>
         <ScrollLottie onChatToggle={handleChatToggle} />
@@ -466,22 +499,12 @@ function App() {
       <main className="hero">
         <div className="hero-container">
           <div className="hero-left">
-            <div className="lottie-container">
-              <Suspense fallback={<div style={{ minHeight: '300px' }}></div>}>
-                <DotLottieReact
-                  src="https://lottie.host/f196ba50-2af8-425e-bd9d-cf9a096d5742/pzry9Z8ils.lottie"
-                  loop
-                  autoplay
-                  className="lottie-animation"
-                />
-              </Suspense>
-            </div>
             <h1 className="hero-title">
               <span className="title-line1">SkyWeb</span>
               <span className="title-line2">We scale what others only dream of.</span>
               </h1>
               
-            <div className="welcome-text">
+            <div className="welcome-text" style={{ marginTop: '10px' }}>
               <p>
               At SkyWeb, we build creative, powerful, and scalable web solutions designed to help businesses grow online.
 We specialize in MERN stack development, modern UI/UX design, and custom software solutions that bring ideas to life.
@@ -591,7 +614,98 @@ Our mission is to deliver smart, high-performance web applications that blend te
         </div>
       </section>
 
-    
+      {/* Our Professional Stack - Scrolling Icons */}
+      <section className="stack-section">
+        <h3 className="stack-title">Our Professional Stack</h3>
+        <div className="stack-marquee" aria-label="Technology stack logos scrolling">
+          <div className="stack-track">
+            {/* Core MERN */}
+            <div className="stack-item" title="MongoDB">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" />
+            </div>
+            <div className="stack-item" title="Express.js">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js" />
+            </div>
+            <div className="stack-item" title="React">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
+            </div>
+            <div className="stack-item" title="Node.js">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" />
+            </div>
+
+            {/* Languages and tooling */}
+            <div className="stack-item" title="JavaScript">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+            </div>
+            <div className="stack-item" title="TypeScript">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" />
+            </div>
+
+            {/* Design & Mobile */}
+            <div className="stack-item" title="Figma">
+              <img src="https://api.iconify.design/logos:figma.svg" alt="Figma" />
+            </div>
+            <div className="stack-item" title="React Native">
+              <img src="https://api.iconify.design/logos:react.svg" alt="React Native" />
+            </div>
+            <div className="stack-item" title="Google Play">
+              <img src="https://api.iconify.design/logos:google-play-icon.svg" alt="Google Play" />
+            </div>
+
+            {/* Hosting / Infra */}
+            <div className="stack-item" title="AWS">
+              <img src="https://api.iconify.design/logos:aws.svg" alt="AWS" />
+            </div>
+            <div className="stack-item" title="Firebase Hosting">
+              <img src="https://api.iconify.design/logos:firebase.svg" alt="Firebase" />
+            </div>
+            <div className="stack-item" title="Docker">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" />
+            </div>
+            <div className="stack-item" title="Nginx">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" alt="Nginx" />
+            </div>
+            <div className="stack-item" title="Vercel">
+              <img src="https://api.iconify.design/logos:vercel-icon.svg" alt="Vercel" />
+            </div>
+            <div className="stack-item" title="Netlify">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/netlify/netlify-original.svg" alt="Netlify" />
+            </div>
+            <div className="stack-item" title="Render">
+              <img src="https://api.iconify.design/simple-icons:render.svg" alt="Render" />
+            </div>
+            <div className="stack-item" title="Heroku">
+              <img src="https://api.iconify.design/logos:heroku-icon.svg" alt="Heroku" />
+            </div>
+            <div className="stack-item" title="DigitalOcean">
+              <img src="https://api.iconify.design/logos:digital-ocean.svg" alt="DigitalOcean" />
+            </div>
+
+            
+
+            {/* Duplicate sequence for seamless loop */}
+            <div className="stack-item" title="MongoDB"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" /></div>
+            <div className="stack-item" title="Express.js"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js" /></div>
+            <div className="stack-item" title="React"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" /></div>
+            <div className="stack-item" title="Node.js"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" /></div>
+            <div className="stack-item" title="JavaScript"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" /></div>
+            <div className="stack-item" title="TypeScript"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" /></div>
+            <div className="stack-item" title="Figma"><img src="https://api.iconify.design/logos:figma.svg" alt="Figma" /></div>
+            <div className="stack-item" title="React Native"><img src="https://api.iconify.design/logos:react.svg" alt="React Native" /></div>
+            <div className="stack-item" title="Google Play"><img src="https://api.iconify.design/logos:google-play-icon.svg" alt="Google Play" /></div>
+            <div className="stack-item" title="AWS"><img src="https://api.iconify.design/logos:aws.svg" alt="AWS" /></div>
+            <div className="stack-item" title="Firebase Hosting"><img src="https://api.iconify.design/logos:firebase.svg" alt="Firebase" /></div>
+            <div className="stack-item" title="Docker"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" /></div>
+            <div className="stack-item" title="Nginx"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" alt="Nginx" /></div>
+            <div className="stack-item" title="Vercel"><img src="https://api.iconify.design/logos:vercel-icon.svg" alt="Vercel" /></div>
+            <div className="stack-item" title="Netlify"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/netlify/netlify-original.svg" alt="Netlify" /></div>
+            <div className="stack-item" title="Render"><img src="https://api.iconify.design/simple-icons:render.svg" alt="Render" /></div>
+            <div className="stack-item" title="Heroku"><img src="https://api.iconify.design/logos:heroku-icon.svg" alt="Heroku" /></div>
+            <div className="stack-item" title="DigitalOcean"><img src="https://api.iconify.design/logos:digital-ocean.svg" alt="DigitalOcean" /></div>
+            
+          </div>
+        </div>
+      </section>
 
       {/* Footer */}
       <Suspense fallback={null}>

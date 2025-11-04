@@ -38,9 +38,9 @@ function Projects() {
   }, []);
 
   const finalValues = {
-    projects: 50,
-    clients: 35,
-    experience: 2,
+    projects: 5,
+    clients: 5,
+    experience: 1,
     satisfaction: 100
   };
 

@@ -138,10 +138,17 @@ function Internship() {
     });
   };
 
+  // Ensure stipend shows only rupee, removing any dollar signs
+  const formatStipend = (value) => {
+    if (value == null) return '₹';
+    const text = String(value).replace(/\$/g, '').replace(/USD|usd|dollars?/g, '').trim();
+    return text.startsWith('₹') ? text : `₹${text}`;
+  };
+
   const shareViaWhatsApp = () => {
     if (!shareInternship) return;
     const url = getCurrentPageUrl();
-    const message = `Check out this internship opportunity!\n\n*${shareInternship.title}*\n\n${shareInternship.description.substring(0, 100)}...\n\n📍 ${shareInternship.location}\n💰 ${shareInternship.stipend}\n⏱️ ${shareInternship.duration}\n\nApply here: ${url}`;
+    const message = `Check out this internship opportunity!\n\n*${shareInternship.title}*\n\n${shareInternship.description.substring(0, 100)}...\n\n📍 ${shareInternship.location}\n💰 ${formatStipend(shareInternship.stipend)}\n⏱️ ${shareInternship.duration}\n\nApply here: ${url}`;
     window.open(`https://wa.me/?text=${encodeURIComponent(message)}`, '_blank');
   };
 
@@ -149,14 +156,14 @@ function Internship() {
     if (!shareInternship) return;
     const url = getCurrentPageUrl();
     const subject = `Internship Opportunity: ${shareInternship.title}`;
-    const body = `Hi,\n\nI wanted to share this exciting internship opportunity with you:\n\n${shareInternship.title}\n\n${shareInternship.description}\n\nDuration: ${shareInternship.duration}\nLocation: ${shareInternship.location}\nStipend: ${shareInternship.stipend}\n${shareInternship.certificate ? '✓ Certificate Provided\n' : ''}\nApply here: ${url}\n\nBest regards`;
+    const body = `Hi,\n\nI wanted to share this exciting internship opportunity with you:\n\n${shareInternship.title}\n\n${shareInternship.description}\n\nDuration: ${shareInternship.duration}\nLocation: ${shareInternship.location}\nStipend: ${formatStipend(shareInternship.stipend)}\n${shareInternship.certificate ? '✓ Certificate Provided\n' : ''}\nApply here: ${url}\n\nBest regards`;
     window.location.href = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   const shareViaTwitter = () => {
     if (!shareInternship) return;
     const url = getCurrentPageUrl();
-    const text = `Internship Opportunity: ${shareInternship.title} at SkyWeb!\n\n${shareInternship.duration} | ${shareInternship.location} | ${shareInternship.stipend}\n\nApply now:`;
+    const text = `Internship Opportunity: ${shareInternship.title} at SkyWeb!\n\n${shareInternship.duration} | ${shareInternship.location} | ${formatStipend(shareInternship.stipend)}\n\nApply now:`;
     window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
   };
 
@@ -228,11 +235,8 @@ function Internship() {
                       </div>
                       
                       <div className="detail-item">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                          <line x1="12" y1="1" x2="12" y2="23" strokeWidth="2"/>
-                          <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" strokeWidth="2"/>
-                        </svg>
-                        <span>{internship.stipend}</span>
+                        <span aria-hidden="true" style={{ fontWeight: 700, marginRight: 6 }}>₹</span>
+                        <span>{formatStipend(internship.stipend)}</span>
                       </div>
                     </div>
 

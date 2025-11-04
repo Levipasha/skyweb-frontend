@@ -13,7 +13,7 @@ function Team() {
 
   // Image mapping for local images (until uploaded to Cloudinary)
   const localImages = {
-    "MD Rabbani": require('./images/me.jpg'),
+    "MD Rabbani": require('./images 1/me.jpg'),
     "nimmalapudi vikhyath": require('./images/nvc.jpg'),
     "T.vamshi": require('./images/v.jpg'),
     "Muskaan fathima": require('./images/m.jpg'),
