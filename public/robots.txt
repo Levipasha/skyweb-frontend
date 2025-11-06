@@ -25,7 +25,7 @@ User-agent: Slurp
 Allow: /
 
 # Sitemap location
-Sitemap: https://www.skyweb.in/sitemap.xml
+Sitemap: https://skywebdev.xyz/sitemap.xml
 
 # Crawl-delay for slower bots
 User-agent: *
