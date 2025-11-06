@@ -12,9 +12,9 @@ const SEO = ({
   publishedTime,
   modifiedTime
 }) => {
-  const siteUrl = 'https://www.skyweb.in';
+  const siteUrl = 'https://skywebdev.xyz';
   const fullUrl = url ? `${siteUrl}${url}` : siteUrl;
-  const imageUrl = ogImage || `${siteUrl}/favicon.png`;
+  const imageUrl = ogImage || `${siteUrl}/logo512.png`;
   
   const defaultTitle = 'SkyWeb - Professional Web Development & MERN Stack Solutions';
   const defaultDescription = 'SkyWeb delivers cutting-edge web development, MERN stack applications, mobile apps, and custom software solutions. Transform your business with our expert team in Hyderabad.';
