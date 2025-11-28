@@ -47,7 +47,7 @@ function Contact() {
             </div>
             <h3 className="card-title">Email Us</h3>
             <p className="card-description">Send us an email anytime</p>
-            <a href="mailto:skywebdevelopers123@gmail.com" className="card-link">skywebdevelopers123@gmail.com</a>
+            <a href="mailto:skywebdevelopers123@gmail.com" className="card-link">offical@skyweb.xyz</a>
           </div>
 
           <div className="contact-card">
@@ -58,7 +58,7 @@ function Contact() {
             </div>
             <h3 className="card-title">Call Us</h3>
             <p className="card-description">Mon-Fri from 9am to 6pm</p>
-            <a href="tel:+919912937061" className="card-link">+91 9912937061</a>
+            <a href="tel:+919912937061" className="card-link">+91 9121428210</a>
           </div>
 
           <a 
