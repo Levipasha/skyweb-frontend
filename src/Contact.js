@@ -198,7 +198,7 @@ function Contact() {
               height="400"
               style={{ border: 0, borderRadius: '15px' }}
               loading="lazy"
-              title="Skyweb Location (OpenStreetMap)"
+              title="SkyWeb Private Limited Location (OpenStreetMap)"
             ></iframe>
           </div>
         </div>

@@ -6,7 +6,7 @@ const ChatBot = ({ isMobile = false, isOpen: externalIsOpen = false, onToggle: e
   const [messages, setMessages] = useState([
     {
       id: 1,
-      text: "Hello! I'm your SkyWeb assistant. How can I help you today?",
+      text: "Hello! I'm your SkyWeb Private Limited assistant. How can I help you today?",
       isBot: true,
       timestamp: new Date()
     }
@@ -49,7 +49,7 @@ const ChatBot = ({ isMobile = false, isOpen: externalIsOpen = false, onToggle: e
       "TypeScript, JavaScript, Python"
     ],
     company: {
-      name: "SkyWeb",
+      name: "SkyWeb Private Limited",
       mission: "We scale what others only dream of",
       description: "We build creative, powerful, and scalable web solutions designed to help businesses grow online. We specialize in MERN stack development, modern UI/UX design, and custom software solutions."
     },
@@ -65,7 +65,7 @@ const ChatBot = ({ isMobile = false, isOpen: externalIsOpen = false, onToggle: e
     
     // Greeting responses
     if (message.includes('hello') || message.includes('hi') || message.includes('hey')) {
-      return "Hello! Welcome to SkyWeb! I'm here to help you learn about our services. What would you like to know?";
+      return "Hello! Welcome to SkyWeb Private Limited! I'm here to help you learn about our services. What would you like to know?";
     }
     
     // Services queries
@@ -229,7 +229,7 @@ const ChatBot = ({ isMobile = false, isOpen: externalIsOpen = false, onToggle: e
               </svg>
             </div>
             <div className="chatbot-info">
-              <h3>SkyWeb Assistant</h3>
+              <h3>SkyWeb Private Limited Assistant</h3>
               <p>Online now</p>
             </div>
             <button className="chatbot-close" onClick={toggleChat}>

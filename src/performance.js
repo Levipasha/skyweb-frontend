@@ -1,5 +1,5 @@
 /**
- * Performance Optimization Utilities for SkyWeb
+ * Performance Optimization Utilities for SkyWeb Private Limited
  * 
  * This file contains utilities to improve web performance:
  * - Preload critical resources

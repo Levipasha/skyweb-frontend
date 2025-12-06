@@ -179,7 +179,7 @@ function App() {
       <nav className={`navbar ${!showRibbon ? 'navbar-no-ribbon' : ''}`}>
       <div className="nav-container">
         <div className="nav-logo" onClick={() => handleNavClick('Home')}>
-          <LazyImage src={skywebLogo} alt="SkyWeb Logo" className="nav-logo-img" />
+          <LazyImage src={skywebLogo} alt="SkyWeb Private Limited Logo" className="nav-logo-img" />
         </div>
         <div className={`nav-menu ${isMenuOpen ? 'open' : ''}`}>
           {menuItems.map((item) => (
@@ -500,13 +500,13 @@ function App() {
         <div className="hero-container">
           <div className="hero-left">
             <h1 className="hero-title">
-              <span className="title-line1">SkyWeb</span>
+              <span className="title-line1">SkyWeb Private Limited</span>
               <span className="title-line2">We scale what others only dream of.</span>
               </h1>
               
             <div className="welcome-text" style={{ marginTop: '10px' }}>
               <p>
-              At SkyWeb, we build creative, powerful, and scalable web solutions designed to help businesses grow online.
+              At SkyWeb Private Limited, we build creative, powerful, and scalable web solutions designed to help businesses grow online.
 We specialize in MERN stack development, modern UI/UX design, and custom software solutions that bring ideas to life.
 
 Our mission is to deliver smart, high-performance web applications that blend technology with creativity. From startups to enterprises, we help you transform your digital presence with innovation, precision, and style.              </p>
@@ -515,7 +515,7 @@ Our mission is to deliver smart, high-performance web applications that blend te
 
           <div className="hero-center">
             <div className="center-logo">
-              <LazyImage src={skywebStylizedLogo} alt="SkyWeb Logo" className="center-logo-img" />
+              <LazyImage src={skywebStylizedLogo} alt="SkyWeb Private Limited Logo" className="center-logo-img" />
             </div>
           </div>
 

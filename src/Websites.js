@@ -47,7 +47,7 @@ function Websites({ onNavigate }) {
           <div className="website-content">
             <h2 className="section-title">Professional Web Development</h2>
             <p className="section-description">
-              At SkyWeb, we specialize in creating stunning, high-performance websites that not only look amazing 
+              At SkyWeb Private Limited, we specialize in creating stunning, high-performance websites that not only look amazing 
               but also deliver exceptional user experiences. From simple landing pages to complex web applications, 
               we bring your vision to life with cutting-edge technology and creative design.
             </p>

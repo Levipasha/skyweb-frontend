@@ -24,11 +24,11 @@ const Loader = ({ onLoadComplete }) => {
         
         <div className="loader-content">
           <div className="logo-container">
-            <img src={skywebLogo} alt="SkyWeb Logo" className="loader-logo" />
+            <img src={skywebLogo} alt="SkyWeb Private Limited Logo" className="loader-logo" />
           </div>
           
           <div className="loader-text">
-            <h2>SKYWEB</h2>
+            <h2>SKYWEB (PVT LTD)</h2>
             <div className="loading-dots">
               <span></span>
               <span></span>

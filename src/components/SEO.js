@@ -8,7 +8,7 @@ const SEO = ({
   ogImage, 
   url, 
   type = 'website',
-  author = 'SkyWeb Technologies',
+  author = 'SkyWeb Private Limited Technologies',
   publishedTime,
   modifiedTime
 }) => {
@@ -16,11 +16,11 @@ const SEO = ({
   const fullUrl = url ? `${siteUrl}${url}` : siteUrl;
   const imageUrl = ogImage || `${siteUrl}/logo512.png`;
   
-  const defaultTitle = 'SkyWeb - Professional Web Development & MERN Stack Solutions';
-  const defaultDescription = 'SkyWeb delivers cutting-edge web development, MERN stack applications, mobile apps, and custom software solutions. Transform your business with our expert team in Hyderabad.';
+  const defaultTitle = 'SkyWeb Private Limited - Professional Web Development & MERN Stack Solutions';
+  const defaultDescription = 'SkyWeb Private Limited delivers cutting-edge web development, MERN stack applications, mobile apps, and custom software solutions. Transform your business with our expert team in Hyderabad.';
   const defaultKeywords = 'web development, MERN stack, React, Node.js, MongoDB, Express, mobile apps, custom software, Hyderabad, India';
   
-  const seoTitle = title ? `${title} | SkyWeb` : defaultTitle;
+  const seoTitle = title ? `${title} | SkyWeb Private Limited` : defaultTitle;
   const seoDescription = description || defaultDescription;
   const seoKeywords = keywords || defaultKeywords;
 
@@ -42,7 +42,7 @@ const SEO = ({
       <meta property="og:title" content={seoTitle} />
       <meta property="og:description" content={seoDescription} />
       <meta property="og:image" content={imageUrl} />
-      <meta property="og:site_name" content="SkyWeb" />
+      <meta property="og:site_name" content="SkyWeb Private Limited" />
       <meta property="og:locale" content="en_US" />
       
       {publishedTime && <meta property="article:published_time" content={publishedTime} />}

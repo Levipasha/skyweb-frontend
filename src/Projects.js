@@ -126,8 +126,8 @@ function Projects() {
     <div className="projects-page">
       <SEO 
         title="Our Projects - Web Development Portfolio"
-        description="Explore SkyWeb's portfolio of 50+ successfully delivered web development projects. From MERN stack applications to e-commerce platforms, see how we transform businesses digitally."
-        keywords="web development portfolio, MERN stack projects, React projects, completed projects, e-commerce development, web applications, SkyWeb portfolio"
+        description="Explore SkyWeb Private Limited's portfolio of 50+ successfully delivered web development projects. From MERN stack applications to e-commerce platforms, see how we transform businesses digitally."
+        keywords="web development portfolio, MERN stack projects, React projects, completed projects, e-commerce development, web applications, SkyWeb Private Limited portfolio"
         url="/projects"
         type="website"
       />

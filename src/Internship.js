@@ -163,7 +163,7 @@ function Internship() {
   const shareViaTwitter = () => {
     if (!shareInternship) return;
     const url = getCurrentPageUrl();
-    const text = `Internship Opportunity: ${shareInternship.title} at SkyWeb!\n\n${shareInternship.duration} | ${shareInternship.location} | ${formatStipend(shareInternship.stipend)}\n\nApply now:`;
+    const text = `Internship Opportunity: ${shareInternship.title} at SkyWeb Private Limited!\n\n${shareInternship.duration} | ${shareInternship.location} | ${formatStipend(shareInternship.stipend)}\n\nApply now:`;
     window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
   };
 
@@ -179,7 +179,7 @@ function Internship() {
       <section className="internship-hero">
         <div className="internship-hero-content">
           <h1 className="internship-hero-title">Internship Opportunities</h1>
-          <p className="internship-hero-subtitle">Join SkyWeb and kickstart your career in tech</p>
+          <p className="internship-hero-subtitle">Join SkyWeb Private Limited and kickstart your career in tech</p>
         </div>
       </section>
 
@@ -300,7 +300,7 @@ function Internship() {
       {/* Features Section */}
       <section className="features-section">
         <div className="features-container">
-          <h2 className="section-title">Why Intern at SkyWeb?</h2>
+          <h2 className="section-title">Why Intern at SkyWeb Private Limited?</h2>
           <div className="features-grid">
             <div className="feature-card">
               <div className="feature-icon">

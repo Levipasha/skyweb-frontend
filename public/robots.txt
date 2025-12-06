@@ -1,5 +1,5 @@
 # https://www.robotstxt.org/robotstxt.html
-# SkyWeb - Web Development & MERN Stack Solutions
+# SkyWeb Private Limited - Web Development & MERN Stack Solutions
 
 # Allow all search engines
 User-agent: *

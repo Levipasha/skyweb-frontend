@@ -21,7 +21,7 @@ function Privacy() {
       <section className="terms-hero">
         <div className="terms-hero-content">
           <h1 className="terms-hero-title">Privacy Policy</h1>
-          <p className="terms-hero-subtitle">How SkyWeb collects, uses, and protects your data</p>
+          <p className="terms-hero-subtitle">How SkyWeb Private Limited collects, uses, and protects your data</p>
         </div>
       </section>
 

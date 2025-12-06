@@ -7,7 +7,7 @@ function Footer() {
       <div className="footer-container">
         <div className="footer-top">
           <div className="footer-column">
-            <h3 className="footer-logo">SKYWEB</h3>
+            <h3 className="footer-logo">SKYWEB PRIVATE LIMITED</h3>
             <p className="footer-description">
               We scale what others only dream of. Transforming businesses through innovative AI solutions and cutting-edge technology.
             </p>
@@ -68,7 +68,7 @@ function Footer() {
 
         <div className="footer-bottom">
           <p className="footer-copyright">
-            © 2025 SkyWeb. All rights reserved.
+            © 2025 SkyWeb Private Limited. All rights reserved.
           </p>
           <div className="footer-legal">
             <a

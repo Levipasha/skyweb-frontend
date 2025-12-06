@@ -72,7 +72,7 @@ function About({ onNavigate }) {
     <div className="about-page">
       <div className="about-container">
         <div className="about-header">
-          <h1 className="about-title">About SkyWeb</h1>
+          <h1 className="about-title">About SkyWeb Private Limited</h1>
           <p className="about-subtitle">
             We are passionate developers creating digital solutions that matter
           </p>
@@ -82,7 +82,7 @@ function About({ onNavigate }) {
           <div className="about-section fade-in-scroll">
             <h2>Our Story</h2>
             <p>
-              SkyWeb was founded with a simple yet powerful vision: to help businesses 
+              SkyWeb Private Limited was founded with a simple yet powerful vision: to help businesses 
               scale their digital presence through innovative web solutions. We believe 
               that every great idea deserves a powerful digital platform to reach its 
               full potential.
@@ -157,7 +157,7 @@ function About({ onNavigate }) {
           </div>
 
           <div className="about-section fade-in-scroll">
-            <h2>Why Choose SkyWeb?</h2>
+            <h2>Why Choose SkyWeb Private Limited?</h2>
             <ul className="features-list">
               <li>Expert team with years of experience</li>
               <li>Modern tech stack (MERN, React, Node.js)</li>

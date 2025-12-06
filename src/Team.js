@@ -93,7 +93,7 @@ function Team() {
       <div className="team-page">
         <SEO 
           title="Our Team - Expert Web Developers"
-          description="Meet the talented team behind SkyWeb"
+          description="Meet the talented team behind SkyWeb Private Limited"
           keywords="web development team, MERN stack developers"
           url="/team"
           type="website"
@@ -138,7 +138,7 @@ function Team() {
     <div className="team-page">
       <SEO 
         title="Our Team - Expert Web Developers"
-        description="Meet the talented team behind SkyWeb. Our expert developers, designers, and project managers specialize in MERN stack, mobile apps, and custom software solutions."
+        description="Meet the talented team behind SkyWeb Private Limited. Our expert developers, designers, and project managers specialize in MERN stack, mobile apps, and custom software solutions."
         keywords="web development team, MERN stack developers, React developers, Node.js experts, UI/UX designers, software development team, Hyderabad developers"
         url="/team"
         type="website"
